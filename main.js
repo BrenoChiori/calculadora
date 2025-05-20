@@ -29,36 +29,37 @@ function calcula() {
         return document.getElementById("calc-result").innerText = "Não e possivel realizar essa operação"
     }
 
-    console.log(`Array inicial ${calculoSeparado}`)
+    while (calculoSeparado.includes("*") || calculoSeparado.includes("/")) {
 
-    for (let j = 0; j < calculoSeparado.length; j++) {
-        let valor = calculoSeparado[j]
-        let valor1, valor2
+        for (let j = 0; j < calculoSeparado.length; j++) {
+            let valor = calculoSeparado[j]
+            let valor1, valor2
 
-        switch (valor) {
-            case '*':
-                valor1 = parseInt(calculoSeparado[j - 1])
-                valor2 = parseInt(calculoSeparado[j + 1])
-                resultado = valor1 * valor2
-                calculoSeparado[j] = resultado.toString()
-                calculoSeparado.splice(j + 1, 1)
-                calculoSeparado.splice(j - 1, 1)
-                resultado = 0
-                break;
+            switch (valor) {
+                case '*':
+                    valor1 = parseInt(calculoSeparado[j - 1])
+                    valor2 = parseInt(calculoSeparado[j + 1])
+                    resultado = valor1 * valor2
+                    calculoSeparado[j] = resultado.toString()
+                    calculoSeparado.splice(j + 1, 1)
+                    calculoSeparado.splice(j - 1, 1)
+                    resultado = 0
+                    break;
 
-            case '/':
-                valor1 = parseInt(calculoSeparado[j - 1])
-                valor2 = parseInt(calculoSeparado[j + 1])
-                resultado = valor1 / valor2
-                calculoSeparado[j] = resultado.toString()
-                calculoSeparado.splice(j + 1, 1)
-                calculoSeparado.splice(j - 1, 1)
-                resultado = 0
-                break;
+                case '/':
+                    valor1 = parseInt(calculoSeparado[j - 1])
+                    valor2 = parseInt(calculoSeparado[j + 1])
+                    resultado = valor1 / valor2
+                    calculoSeparado[j] = resultado.toString()
+                    calculoSeparado.splice(j + 1, 1)
+                    calculoSeparado.splice(j - 1, 1)
+                    resultado = 0
+                    break;
+            }
+
         }
-    }
 
-    console.log(`Array final ${calculoSeparado}`)
+    }
 
     if (calculoSeparado.length > 1) {
         for (let i = 0; i < calculoSeparado.length; i++) {
