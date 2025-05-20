@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div id="calculadora">
+        <div id="results">
+            <h3>Calculadora</h3>
+            <p id="calc-result"></p>
+        </div>
+        <input id="inputCalc" type="text" onkeydown="teclas(event)" name="inputCalc" />
+        <div id="teclado-calc">
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('7')">7</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('8')">8</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('9')">9</button>
+            <button class="tecla teclaOperacao" onclick="teclasSelecionadas('/')">/</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('4')">4</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('5')">5</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('6')">6</button>
+            <button class="tecla teclaOperacao" onclick="teclasSelecionadas('*')">x</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('1')">1</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('2')">2</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('3')">3</button>
+            <button class="tecla teclaOperacao" onclick="teclasSelecionadas('-')">-</button>
+            <button class="tecla teclaClear" onclick="teclasSelecionadas('c')">C</button>
+            <button class="tecla teclaPrimaria" onclick="teclasSelecionadas('0')">0</button>
+            <button class="tecla teclaClear" onclick="calcula()">=</button>
+            <button class="tecla teclaOperacao" onclick="teclasSelecionadas('+')">+</button>
+        </div>
+    </div>
+</body>
+
+</html>
