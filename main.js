@@ -30,6 +30,10 @@ function calcula() {
         return document.getElementById("calc-result").innerText = "Expressão mal formada"
     }
 
+    if(calculoCompleto.includes("/0")) {
+        return document.getElementById("calc-result").innerText = "não e possivel dividir por 0"
+    }
+
     while (calculoSeparado.includes("*") || calculoSeparado.includes("/")) {
 
         for (let j = 0; j < calculoSeparado.length; j++) {
