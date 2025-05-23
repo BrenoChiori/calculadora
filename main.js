@@ -24,9 +24,10 @@ function calcula() {
     let calculoCompleto = document.getElementById("inputCalc").value
     let calculoSeparado = calculoCompleto.match(/\d+|[+\-*/]/g)
     let resultado = 0
+    let operacao = ["*", "/", "-", "+"]
 
-    if(calculoSeparado.length <= 2) {
-        return document.getElementById("calc-result").innerText = "Não e possivel realizar essa operação"
+    if(calculoSeparado.length <= 2 || operacao.includes(calculoSeparado[0]) || operacao.includes(calculoSeparado[calculoSeparado.length - 1]) ) {
+        return document.getElementById("calc-result").innerText = "Expressão mal formada"
     }
 
     while (calculoSeparado.includes("*") || calculoSeparado.includes("/")) {
